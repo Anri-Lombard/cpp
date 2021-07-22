@@ -1,13 +1,31 @@
 #include <string>
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+
+void print_vector(std::vector<int> vec) {
+    std::cout << "Your guesses:\t";
+    for (int i=0; i<vec.size(); i++) {
+        std::cout << vec[i] << "\t";
+    }
+    std::cout << "\n";
+}
 
 void play_game(){
+    std::vector<int> guesses;
+    int count = 0;
+
     int random = rand() % 251;
+
     std::cout << "Game is being played\n";
     std::cout << "Guess a number: ";
     while(true) {
         int guess;
         std::cin >> guess;
+
+        guesses.push_back(guess);
+
         if(guess == random) {
             std::cout << "You win!\n";
             break;
@@ -17,6 +35,7 @@ void play_game(){
             std::cout << "You high!\n";
         }
     }
+    print_vector(guesses);
 }
 
 int main()
