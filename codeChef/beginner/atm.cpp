@@ -7,9 +7,17 @@ typedef long double ld;
 typedef vector<int> vi;
 
 
+#define nl "\n"
+
+
 void solve() {
-    int n; cin >> n;
-    cout << (n + 1) / 10 << '\n';
+    int X;
+    double Y;
+    cin >> X >> Y;
+    if (Y - X - 0.50 >= 0 && X % 5 == 0)
+        cout << Y - X - 0.50 << nl; 
+    else
+        cout << fixed << setprecision(2) << Y << nl;
 }
 
 
@@ -22,8 +30,6 @@ int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    int t; cin >> t;
-    while (t--) {
-        solve();
-    }
+    
+    solve();
 }

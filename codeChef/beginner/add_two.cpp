@@ -7,18 +7,12 @@ typedef long double ld;
 typedef vector<int> vi;
 
 
+#define nl "\n"
+
+
 void solve() {
-    int N; cin >> N;
-    vector<int> A;
-
-    for (int i=0; i<N; i++){
-        int a; cin >> a;
-        A.push_back(a);
-    }
-
-    reverse(A.begin(), A.end());
-    for (int i=0; i < A.size(); i++) 
-        cout << A[i] << " ";
+    int A, B; cin >> A >> B;
+    cout << A + B << nl;   
 }
 
 
@@ -30,5 +24,9 @@ int main(){
     
     ios::sync_with_stdio(0);
     cin.tie(0);
-    solve();
+    
+    int t; cin >> t;
+    while (t--) {
+        solve();
+    }
 }
