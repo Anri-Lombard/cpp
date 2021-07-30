@@ -2,17 +2,7 @@
 using namespace std;
 
 
-typedef long long ll;
-typedef long double ld;
-typedef vector<int> vi;
-
-
 #define nl "\n"
-
-
-void solve() {
-    
-}
 
 
 int main(){
@@ -24,8 +14,12 @@ int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    int t; cin >> t;
-    while (t--) {
-        solve();
+    int l, b; cin >> l >> b;
+    int y = 0;
+    while (l <= b) {
+        y++;
+        l *= 3;
+        b *= 2;
     }
+    cout << y << nl;
 }
