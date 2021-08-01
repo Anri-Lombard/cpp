@@ -17,24 +17,32 @@ using namespace std;
 
 
 #define nl "\n"
+#define vi vector<int>
 
 
 void solve() {
-    
+    int a, b; cin >> a >> b;
+    if (a > b)
+        cout << ">" << nl;
+    else if (a < b)
+        cout << "<" << nl;
+    else   
+        cout << "=" << nl;
 
 }
 
 
 int main(){
 #ifndef ONLINE_JUDGE
-    freopen("../input.txt", "r", stdin);
-    freopen("../output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 #endif
     
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    float A,B,C; cin >> A >> B;
-    C = (A-B)/3 + B;
-    cout << C << nl;
+    int t; cin >> t;
+    while(t--) {
+        solve();
+    }
 }
