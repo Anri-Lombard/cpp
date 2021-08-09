@@ -34,11 +34,11 @@ int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    long long x; cin >> x;
-    while (x != 1) {
-        cout << x << " ";
-        if (x%2 == 0) x /= 2;
-        else x = 3 * x + 1;
-    }
-    cout << x;
+    vector<bool> cover(100);
+    int a, b, c, d; cin >> a >> b >> c >> d;
+    for (int i = a; i < b; ++i) cover[i] = 1;
+    for (int i = c; i < d; ++i) cover[i] = 1;
+    int ans = 0;
+    for (int i = 0; i < 100; ++i) ans += cover[i];
+    cout << ans;
 }
