@@ -34,15 +34,28 @@ int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    int a,b,c,ans=0;
-    cin >> a >> b >> c;
-    for (int i=0; i<1001; ++i) {
-        if (a*i > c) break;
-        for (int j = 0; j < 1001; ++j) {
-            int n = a*i + b*j;
-            if (n > c) break;
-            ans = max(ans, n);
-        }
+    int n; cin >> n;
+    int petals[n];
+    for(int i=0; i<n; ++i) {
+        cin >> petals[i];
     }
-    cout << ans;
+    int photos = 0;
+	for (int i = 0; i < n; ++i) {
+		for (int j = i; j < n; ++j) {
+			int totalPetals = 0;
+			for (int k = i; k <= j; ++k) {
+				totalPetals += petals[k];
+			}
+			bool present = false;
+			for (int k = i; k <= j; ++k) {
+				if (petals[k] * (j-i+1) == totalPetals) {
+					present = true;
+				}
+			}
+			if (present) {
+				++photos;
+			}
+		}
+	}
+	cout << photos;
 }

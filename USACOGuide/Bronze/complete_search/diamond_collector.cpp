@@ -34,15 +34,21 @@ int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    int a,b,c,ans=0;
-    cin >> a >> b >> c;
-    for (int i=0; i<1001; ++i) {
-        if (a*i > c) break;
-        for (int j = 0; j < 1001; ++j) {
-            int n = a*i + b*j;
-            if (n > c) break;
-            ans = max(ans, n);
+    int n, k; cin >> n >> k;
+    vector<int> a;
+    a.resize(n);
+    for (int i = 0;i<n;++i){
+        cin >> a[i];
+    }
+    sort(a.begin(), a.end());
+    int ans=0;
+    for (int i=0; i<n; ++i) {
+        int cnt = 1;
+        for (int j=i+1; j<n; ++j) {
+            if(a[j] - a[i] <= k) ++cnt;
+            else break;
         }
+        ans=max(cnt,ans);
     }
     cout << ans;
 }
